@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJP IT - Professional IT Solutions & Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#1e3a8a',
+                        light: '#eff6ff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+        }
+        
+        .service-card:hover, .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        .cart-count {
+            display: inline-block;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-primary">RJP<span class="text-dark">IT</span></div>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium transition">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium transition">Services</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-primary font-medium transition">Products</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium transition">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium transition">Contact</a>
+                    <a href="#cart" class="flex items-center ml-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </nav>
+                
+                <div class="md:hidden flex items-center">
+                    <a href="#cart" class="flex items-center mr-4 bg-primary text-white px-3 py-1 rounded-lg hover:bg-secondary transition">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="text-gray-700 focus:outline-none mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu md:hidden bg-white shadow-lg">
+                <div class="flex flex-col space-y-4 p-6">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary font-medium transition">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-primary font-medium transition">Services</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-primary font-medium transition">Products</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium transition">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Innovative IT Solutions for Your Business</h1>
+                <p class="text-xl mb-8 text-blue-100">Providing cutting-edge technology services and products to help your business grow in the digital age.</p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Shop Products</a>
+                    <a href="#services" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">Our Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="IT Solutions" 
+                     class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our IT Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">We offer comprehensive IT solutions tailored to your business needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service cards remain the same as your original -->
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Products</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Quality IT products to enhance your business operations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                         alt="Business Software Suite" 
+                         class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-dark">Business Software Suite</h3>
+                    <p class="text-gray-600 mb-4">Complete package for business management including CRM, accounting, and inventory.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg">$299.99</span>
+                        <button onclick="addToCart(1)" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Security Software" 
+                         class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-dark">Security Software</h3>
+                    <p class="text-gray-600 mb-4">Advanced protection against malware, ransomware, and cyber threats.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg">$149.99</span>
+                        <button onclick="addToCart(2)" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Networking Kit" 
+                         class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-dark">Networking Kit</h3>
+                    <p class="text-gray-600 mb-4">Complete networking solution for small to medium businesses.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg">$499.99</span>
+                        <button onclick="addToCart(3)" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="IT Support Package" 
+                         class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold mb-2 text-dark">IT Support Package</h3>
+                    <p class="text-gray-600 mb-4">Annual subscription for 24/7 IT support and maintenance.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-lg">$999.99</span>
+                        <button onclick="addToCart(4)" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Your Shopping Cart</h3>
+                    <div id="cart-items" class="mb-4">
+                        <!-- Cart items will be inserted here -->
+                        <p class="text-gray-500">Your cart is empty</p>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <span class="font-medium">Tax:</span>
+                            <span id="cart-tax">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-bold">
+                            <span>Total:</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="checkout()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-secondary focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
+                        Checkout
+                    </button>
+                    <button type="button" onclick="closeCart()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About and Contact sections remain the same as your original -->
+    <!-- ... -->
+
+    <script>
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Update cart count display
+        function updateCartCount() {
+            const countElements = document.querySelectorAll('.cart-count');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            countElements.forEach(el => el.textContent = totalItems);
+        }
+        
+        // Add item to cart
+        function addToCart(productId) {
+            const products = {
+                1: { name: 'Business Software Suite', price: 299.99 },
+                2: { name: 'Security Software', price: 149.99 },
+                3: { name: 'Networking Kit', price: 499.99 },
+                4: { name: 'IT Support Package', price: 999.99 }
+            };
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: products[productId].name,
+                    price: products[productId].price,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showCart();
+        }
+        
+        // Show cart modal
+        function showCart() {
+            const modal = document.getElementById('cart-modal');
+            const cartItems = document.getElementById('cart-items');
+            const subtotal = document.getElementById('cart-subtotal');
+            const tax = document.getElementById('cart-tax');
+            const total = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500">Your cart is empty</p>';
+                subtotal.textContent = '$0.00';
+                tax.textContent = '$0.00';
+                total.textContent = '$0.00';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                        <div>
+                            <h4 class="font-medium">${item.name}</h4>
+                            <p class="text-sm text-gray-500">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="font-medium mr-4">$${(item.price * item.quantity).toFixed(2)}</span>
+                            <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                const subtotalValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const taxValue = subtotalValue * 0.1; // 10% tax
+                const totalValue = subtotalValue + taxValue;
+                
+                subtotal.textContent = `$${subtotalValue.toFixed(2)}`;
+                tax.textContent = `$${taxValue.toFixed(2)}`;
+                total.textContent = `$${totalValue.toFixed(2)}`;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+        
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showCart();
+        }
+        
+        // Close cart modal
+        function closeCart() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        }
+        
+        // Checkout
+        function checkout() {
+            alert('Thank you for your purchase! We will contact you shortly to complete your order.');
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            closeCart();
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+            this.innerHTML = document.querySelector('.mobile-menu').classList.contains('active') ? 
+                '<i class="fas fa-times text-xl"></i>' : 
+                '<i class="fas fa-bars text-xl"></i>';
+        });
+        
+        // Initialize cart count on page load
+        updateCartCount();
+        
+        // Make cart links show the cart modal
+        document.querySelectorAll('a[href="#cart"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showCart();
+            });
+        });
+    </script>
+</body>
+</html>
