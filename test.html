@@ -607,4 +607,589 @@
                             </div>
                             
                             <h4 class="font-bold text-lg mb-4">Payment Method</h4>
-                            <div class="mb-6
+                                                        <div class="mb-6">
+                                <div class="flex items-center mb-2">
+                                    <input type="radio" id="credit-card" name="payment" value="credit-card" class="mr-2" checked>
+                                    <label for="credit-card" class="font-medium">Credit/Debit Card</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input type="radio" id="bKash" name="payment" value="bKash" class="mr-2">
+                                    <label for="bKash" class="font-medium">bKash (Bangladesh)</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="cash-on-delivery" name="payment" value="cash-on-delivery" class="mr-2">
+                                    <label for="cash-on-delivery" class="font-medium">Cash on Delivery</label>
+                                </div>
+                            </div>
+                            
+                            <!-- Credit card fields (shown by default) -->
+                            <div id="credit-card-fields">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label for="card-number" class="checkout-label">Card Number</label>
+                                        <input type="text" id="card-number" class="checkout-input" placeholder="1234 5678 9012 3456">
+                                    </div>
+                                    <div>
+                                        <label for="card-name" class="checkout-label">Name on Card</label>
+                                        <input type="text" id="card-name" class="checkout-input">
+                                    </div>
+                                    <div>
+                                        <label for="card-expiry" class="checkout-label">Expiry Date</label>
+                                        <input type="text" id="card-expiry" class="checkout-input" placeholder="MM/YY">
+                                    </div>
+                                    <div>
+                                        <label for="card-cvv" class="checkout-label">CVV</label>
+                                        <input type="text" id="card-cvv" class="checkout-input" placeholder="123">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- bKash fields (hidden by default) -->
+                            <div id="bkash-fields" class="hidden mb-4">
+                                <div>
+                                    <label for="bkash-number" class="checkout-label">bKash Phone Number</label>
+                                    <input type="tel" id="bkash-number" class="checkout-input" placeholder="01XXXXXXXXX">
+                                </div>
+                                <p class="text-sm text-gray-600 mt-2">Please complete payment to 017XXXXXXXX and enter the transaction ID below.</p>
+                                <div class="mt-2">
+                                    <label for="bkash-transaction" class="checkout-label">Transaction ID</label>
+                                    <input type="text" id="bkash-transaction" class="checkout-input">
+                                </div>
+                            </div>
+                            
+                            <!-- Cash on delivery message -->
+                            <div id="cod-message" class="hidden mb-4">
+                                <p class="text-gray-700">Payment will be collected when your order is delivered.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button id="checkout-button" onclick="proceedToCheckout()" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 sm:w-auto sm:text-sm">
+                        Proceed to Checkout
+                    </button>
+                    <button id="place-order-button" onclick="placeOrder()" type="button" class="hidden w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Place Order
+                    </button>
+                    <button onclick="closeCart()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About RJP IT</h2>
+                    <p class="text-gray-700 mb-4">Founded in 2015, RJP IT has been at the forefront of providing innovative IT solutions to businesses across Bangladesh. Our team of experienced professionals is dedicated to helping companies leverage technology to achieve their business goals.</p>
+                    <p class="text-gray-700 mb-6">We pride ourselves on delivering high-quality products and services with a customer-first approach. Our solutions are tailored to meet the unique needs of each client, ensuring maximum efficiency and return on investment.</p>
+                    <div class="flex space-x-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">150+</div>
+                            <div class="text-gray-600">Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                            <div class="text-gray-600">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                            <div class="text-gray-600">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Our Team" 
+                         class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Get in touch with our team for inquiries or support</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold mb-6 text-dark">Contact Information</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Our Office</h4>
+                                <p class="text-gray-600">123 Tech Park Road, Sylhet, Bangladesh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+880 1234 567890</p>
+                                <p class="text-gray-600">+880 9876 543210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">info@rjp-it.com</p>
+                                <p class="text-gray-600">support@rjp-it.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Business Hours</h4>
+                                <p class="text-gray-600">Sunday - Thursday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600">Friday - Saturday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold mb-6 text-dark">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-secondary transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+            <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">Stay updated with our latest products, services, and IT industry news.</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button type="submit" class="bg-dark text-white px-6 py-3 rounded-r-lg font-medium hover:bg-blue-900 transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">RJP<span class="text-primary">IT</span></div>
+                    <p class="text-gray-400 mb-4">Providing innovative IT solutions to help businesses thrive in the digital world.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile App Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cyber Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">IT Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-sm"></i>
+                            <span>123 Tech Park Road, Sylhet, Bangladesh</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-sm"></i>
+                            <span>+880 1234 567890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-sm"></i>
+                            <span>info@rjp-it.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 RJP IT. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Success Modal -->
+    <div id="order-success-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-check text-green-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Order Placed Successfully!</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Thank you for your purchase. Your order has been received and is being processed.</p>
+                                <p class="text-sm text-gray-500 mt-2">Order ID: <span id="order-id" class="font-medium">RJPT-2023-05678</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button onclick="closeOrderSuccess()" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 sm:w-auto sm:text-sm">
+                        Continue Shopping
+                    </button>
+                    <button onclick="printOrder()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        <i class="fas fa-print mr-2"></i> Print Receipt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+        
+        // Initialize Splide.js slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            new Splide('.splide', {
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                gap: '1.5rem',
+                pagination: false,
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    640: {
+                        perPage: 1,
+                    }
+                }
+            }).mount();
+        });
+        
+        // Shopping cart functionality
+        let cart = [];
+        let cartCount = 0;
+        
+        // Sample products data
+        const products = {
+            1: { id: 1, name: 'Business Software Suite', price: 299.99, image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80' },
+            2: { id: 2, name: 'Security Software', price: 149.99, image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' },
+            3: { id: 3, name: 'Networking Kit', price: 499.99, image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' },
+            4: { id: 4, name: 'IT Support Package', price: 999.99, image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' },
+            5: { id: 5, name: 'Security Software Pro', price: 179.99, image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' },
+            6: { id: 6, name: 'Premium IT Support', price: 1299.99, image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' },
+            7: { id: 7, name: 'Enterprise Networking Kit', price: 799.99, image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' }
+        };
+        
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products[productId];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            cartCount += 1;
+            updateCartCount();
+            
+            // Show a quick notification
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle mr-2"></i>
+                ${product.name} added to cart
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+        
+        // Update cart count display
+        function updateCartCount() {
+            document.querySelectorAll('.cart-count').forEach(el => {
+                el.textContent = cartCount;
+            });
+        }
+        
+        // Open cart modal
+        function openCart() {
+            document.getElementById('cart-modal').classList.remove('hidden');
+            renderCartItems();
+        }
+        
+        // Close cart modal
+        function closeCart() {
+            document.getElementById('cart-modal').classList.add('hidden');
+            // Reset checkout form if visible
+            document.getElementById('checkout-form').classList.add('hidden');
+            document.getElementById('checkout-button').classList.remove('hidden');
+            document.getElementById('place-order-button').classList.add('hidden');
+        }
+        
+        // Close order success modal
+        function closeOrderSuccess() {
+            document.getElementById('order-success-modal').classList.add('hidden');
+        }
+        
+        // Print order receipt
+        function printOrder() {
+            // In a real app, this would generate a proper receipt
+            window.print();
+        }
+        
+        // Render cart items
+        function renderCartItems() {
+            const cartItemsEl = document.getElementById('cart-items');
+            
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<p class="text-gray-500 py-8 text-center">Your cart is empty</p>';
+                document.getElementById('checkout-button').classList.add('hidden');
+                updateCartTotals();
+                return;
+            }
+            
+            document.getElementById('checkout-button').classList.remove('hidden');
+            
+            cartItemsEl.innerHTML = cart.map(item => `
+                <div class="flex items-center py-4 border-b border-gray-200">
+                    <div class="flex-shrink-0">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-md object-cover">
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h4 class="font-medium text-gray-900">${item.name}</h4>
+                        <div class="flex items-center mt-1">
+                            <span class="text-gray-600">$${item.price.toFixed(2)}</span>
+                            <span class="mx-2 text-gray-400">×</span>
+                            <div class="flex items-center border border-gray-300 rounded">
+                                <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})" class="px-2 py-1 text-gray-600 hover:bg-gray-100" ${item.quantity <= 1 ? 'disabled' : ''}>
+                                    <i class="fas fa-minus text-xs"></i>
+                                </button>
+                                <span class="px-2">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})" class="px-2 py-1 text-gray-600 hover:bg-gray-100">
+                                    <i class="fas fa-plus text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <span class="font-medium">$${(item.price * item.quantity).toFixed(2)}</span>
+                        <button onclick="removeFromCart(${item.id})" class="ml-4 text-red-500 hover:text-red-700">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            updateCartTotals();
+        }
+        
+        // Update item quantity
+        function updateQuantity(productId, newQuantity) {
+            if (newQuantity < 1) return;
+            
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+            
+            const quantityChange = newQuantity - item.quantity;
+            item.quantity = newQuantity;
+            cartCount += quantityChange;
+            
+            updateCartCount();
+            renderCartItems();
+        }
+        
+        // Remove item from cart
+        function removeFromCart(productId) {
+            const itemIndex = cart.findIndex(item => item.id === productId);
+            if (itemIndex === -1) return;
+            
+            cartCount -= cart[itemIndex].quantity;
+            cart.splice(itemIndex, 1);
+            
+            updateCartCount();
+            renderCartItems();
+        }
+        
+        // Update cart totals
+        function updateCartTotals() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discount = subtotal > 500 ? subtotal * 0.1 : 0; // 10% discount for orders over $500
+            const tax = (subtotal - discount) * 0.1; // 10% tax
+            const total = subtotal - discount + tax;
+            
+            document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-discount').textContent = `$${discount.toFixed(2)}`;
+            document.getElementById('cart-tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        // Proceed to checkout
+        function proceedToCheckout() {
+            document.getElementById('checkout-form').classList.remove('hidden');
+            document.getElementById('checkout-button').classList.add('hidden');
+            document.getElementById('place-order-button').classList.remove('hidden');
+            
+            // Scroll to the bottom of the modal
+            document.getElementById('cart-modal').scrollTop = document.getElementById('cart-modal').scrollHeight;
+            
+            // Payment method toggle
+            const paymentMethods = document.querySelectorAll('input[name="payment"]');
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', function() {
+                    document.getElementById('credit-card-fields').classList.add('hidden');
+                    document.getElementById('bkash-fields').classList.add('hidden');
+                    document.getElementById('cod-message').classList.add('hidden');
+                    
+                    if (this.value === 'credit-card') {
+                        document.getElementById('credit-card-fields').classList.remove('hidden');
+                    } else if (this.value === 'bKash') {
+                        document.getElementById('bkash-fields').classList.remove('hidden');
+                    } else if (this.value === 'cash-on-delivery') {
+                        document.getElementById('cod-message').classList.remove('hidden');
+                    }
+                });
+            });
+        }
+        
+        // Place order
+        function placeOrder() {
+            // In a real app, this would send the order to a server
+            // For demo, we'll just show a success message
+            
+            // Generate a random order ID
+            const orderId = 'RJP-' + Date.now().toString().slice(-6);
+            document.getElementById('order-id').textContent = orderId;
+            
+            // Close cart modal and show success modal
+            closeCart();
+            document.getElementById('order-success-modal').classList.remove('hidden');
+            
+            // Clear the cart
+            cart = [];
+            cartCount = 0;
+            updateCartCount();
+        }
+        
+        // Make cart accessible from all sections
+        document.querySelectorAll('a[href="#cart"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                openCart();
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (anchor.getAttribute('href') !== '#cart') {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
